@@ -1,4 +1,4 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> <title>GOD'S FAVORITE</title> <link rel="icon" href="https://i.ibb.co/vCwwgQ2D/TRAP-removebg-preview.png"> <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800;900&display=swap" rel="stylesheet"> <style> :root{--ink:#ffffff;--dim:rgba(255,255,255,.6);--glow:rgba(255,0,128,.7);} *{box-sizing:border-box;margin:0;padding:0} html,body{scroll-behavior:smooth;background:#000;overflow-x:hidden;width:100%;} body{margin:0;min-height:100vh;overflow-y:scroll;color:var(--ink);font-family:Outfit,sans-serif;font-weight:800;perspective:1000px;} body::-webkit-scrollbar{display:none;} .bgvideo{position:fixed;top:0;left:0;z-index:-3;width:100%;height:100%;object-fit:cover;filter:brightness(.25) saturate(1) contrast(1.1);} 
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> <title>GOD'S FAVORITE</title> <link rel="icon" href="https://i.ibb.co/vCwwgQ2D/TRAP-removebg-preview.png"> <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800;900&display=swap" rel="stylesheet"> <style> :root{--ink:#ffffff;--dim:rgba(255,255,255,.6);--glow:rgba(255,0,128,.7);--discord:#5865F2;} *{box-sizing:border-box;margin:0;padding:0} html,body{scroll-behavior:smooth;background:#000;overflow-x:hidden;width:100%;} body{margin:0;min-height:100vh;overflow-y:scroll;color:var(--ink);font-family:Outfit,sans-serif;font-weight:800;perspective:1000px;} body::-webkit-scrollbar{display:none;} .bgvideo{position:fixed;top:0;left:0;z-index:-3;width:100%;height:100%;object-fit:cover;filter:brightness(.25) saturate(1) contrast(1.1);} 
 #gate{position:fixed;inset:0;z-index:99;display:grid;place-items:center;background:#000;cursor:pointer;transition:opacity .4s;padding:20px;}
 #gate.hide{opacity:0;pointer-events:none;} 
 .gatebox{text-align:center;animation:fadeIn 1s ease;width:100%;max-width:400px;}
@@ -58,11 +58,19 @@
 .navdot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.2);cursor:pointer;transition:.3s;flex-shrink:0;} 
 .navdot.active{background:var(--glow);transform:scale(1.3);}
 
-/* DISCORD FOOTER */
-.discord-footer{width:100%;text-align:center;padding:40px 20px;margin-top:40px;border-top:1px solid rgba(255,255,255,.1);}
-.discord-title{font-size:.7rem;letter-spacing:3px;color:var(--dim);margin-bottom:15px;font-weight:300;}
-.discord-link{display:inline-block;padding:12px 24px;background:rgba(88,101,242,.2);border:1px solid rgba(88,101,242,.5);border-radius:10px;color:#5865F2;text-decoration:none;font-size:.9rem;font-weight:700;transition:.3s;}
-.discord-link:hover{background:rgba(88,101,242,.4);transform:translateY(-3px);box-shadow:0 0 20px rgba(88,101,242,.4);}
+/* DISCORD SERVER CARD */
+.discord-card{width:100%;max-width:700px;margin:60px auto 0 auto;padding:20px;border-radius:14px;background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;gap:16px;backdrop-filter:blur(10px);}
+.discord-icon{width:50px;height:50px;border-radius:50%;overflow:hidden;flex-shrink:0;}
+.discord-icon img{width:100%;height:100%;object-fit:cover;}
+.discord-info{flex:1;}
+.discord-name{font-size:1.2rem;font-weight:900;margin-bottom:6px;}
+.discord-stats{display:flex;gap:12px;font-size:.75rem;color:var(--dim);font-weight:400;flex-wrap:wrap;}
+.stat{display:flex;align-items:center;gap:6px;}
+.stat-dot{width:8px;height:8px;border-radius:50%;}
+.stat-dot.online{background:#23a55a;}
+.stat-dot.offline{background:#80848e;}
+.discord-join{padding:10px 24px;background:var(--discord);color:#fff;border:none;border-radius:8px;font-size:.9rem;font-weight:700;cursor:pointer;text-decoration:none;transition:.2s;}
+.discord-join:hover{background:#4752c4;transform:scale(1.05);}
 
 @media(max-width:1400px){ .side-gif{display:none;} }
 @media(max-width:768px){
@@ -72,6 +80,8 @@
   .player-cover{width:100px;height:100px;}
   .navdots{bottom:20px;gap:12px;}
   .loader-line{width:250px;}
+  .discord-card{flex-direction:column;text-align:center;padding:20px;}
+  .discord-stats{justify-content:center;}
 }
 @media(max-width:480px){
   .page-wrapper{padding:0 10px;}
@@ -92,10 +102,20 @@
 
 <div class="page-wrapper"> <div class="side-gif left"> <img src="https://i.imgur.com/ERCSijK.gif" alt="left gif"> </div> <main class="wrap"> <p class="tag">“exclusive.”</p> <div class="rule"></div> <section id="treeArea"> <div class="tier" id="exclusive"> <div class="ttitle">REVSHIT</div> <div class="roster"> <article class="person"> <div class="pface-wrapper"> <div class="pface"> <img src="https://i.imgur.com/M1ftfV8.jpeg"> <div class="pstatus-dot"></div> </div> <img class="pface-deco" src="https://cdn.discordapp.com/avatar-decoration-presets/a_bec26d0726a0f2eb7491a7cd40ac9c73.png?size=240"> </div> <div class="pplacard"> <div class="pname">ic¹⁷³⁸</div> <div class="phandle">@icey.1738</div> </div> </article> </div> </div> <div class="tier" id="about"> <div class="ttitle">ABOUT ME</div> <div class="aboutme"> <div class="aboutme-title">above all gods</div> <div class="aboutme-text"> 1738 <br> "exclusive"<br> revshit </div> </div> </div> </section> <div class="player-new" id="player"> <div class="player-cover"><img src="https://i.imgur.com/sbZWuSu.jpeg"></div> <div class="player-main"> <div class="player-top"> <div class="player-info"> <div class="player-title">My Melody</div> <div class="player-artist">My Melody</div> </div> </div> <div class="progress-wrap" id="progressWrap"><div class="progress-bar" id="progressBar"></div></div> <div class="player-controls"> <button class="player-btn play-pause" id="playBtn">▶</button> </div> </div> </div> 
 
-<!-- DISCORD FOOTER -->
-<div class="discord-footer">
-  <div class="discord-title">JOIN OUR SERVER</div>
-  <a href="https://discord.gg/gUdHfsxv6Q" target="_blank" class="discord-link">discord.gg/gUdHfsxv6Q</a>
+<!-- DISCORD SERVER CARD -->
+<div class="discord-card">
+  <div class="discord-icon">
+    <img src="https://i.ibb.co/vCwwgQ2D/TRAP-removebg-preview.png" alt="server icon">
+  </div>
+  <div class="discord-info">
+    <div class="discord-name">NAGMAMAHAL, TRAP</div>
+    <div class="discord-stats">
+      <div class="stat"><div class="stat-dot online"></div>217 online</div>
+      <div class="stat"><div class="stat-dot offline"></div>1462 offline</div>
+      <div class="stat">1679 members</div>
+    </div>
+  </div>
+  <a href="https://discord.gg/gUdHfsxv6Q" target="_blank" class="discord-join">JOIN</a>
 </div>
 
 </main> <div class="side-gif right"> <img src="https://i.imgur.com/wEp19a1.gif" alt="right gif"> </div> </div> <div class="navdots"> <div class="navdot active" data-target="exclusive"></div> <div class="navdot" data-target="about"></div> <div class="navdot" data-target="player"></div> </div> 
