@@ -1,51 +1,68 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>GOD'S FAVORITE</title> <link rel="icon" href="https://i.ibb.co/vCwwgQ2D/TRAP-removebg-preview.png"> <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800;900&display=swap" rel="stylesheet"> <style> :root{--ink:#ffffff;--dim:rgba(255,255,255,.6);--glow:rgba(255,0,128,.7);} *{box-sizing:border-box;margin:0;padding:0} html{scroll-behavior:smooth;} body{margin:0;min-height:100vh;overflow-x:hidden;overflow-y:scroll;color:var(--ink);background:#000;font-family:Outfit,sans-serif;font-weight:800;perspective:1000px;} body::-webkit-scrollbar{display:none;} .bgvideo{position:fixed;top:50%;left:50%;z-index:-3;min-width:100%;min-height:100%;transform:translate(-50%,-50%) scale(1.1);object-fit:cover;filter:brightness(.35) saturate(1) contrast(1.1);animation:bgMove 20s ease-in-out infinite alternate;} @keyframes bgMove{0%{transform:translate(-50%,-50%) scale(1.1) rotate(0deg);}100%{transform:translate(-50%,-50%) scale(1.15) rotate(1deg);}} .bgshade{display:none;}
-/* BINALIK KO YUNG ITIM SA INTRO */
-#gate{position:fixed;inset:0;z-index:99;display:grid;place-items:center;background:rgba(0,0,0,.95);backdrop-filter:blur(20px);cursor:pointer;transition:opacity .4s;}
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> <title>GOD'S FAVORITE</title> <link rel="icon" href="https://i.ibb.co/vCwwgQ2D/TRAP-removebg-preview.png"> <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800;900&display=swap" rel="stylesheet"> <style> :root{--ink:#ffffff;--dim:rgba(255,255,255,.6);--glow:rgba(255,0,128,.7);} *{box-sizing:border-box;margin:0;padding:0} html,body{scroll-behavior:smooth;background:#000;overflow-x:hidden;width:100%;} body{margin:0;min-height:100vh;overflow-y:scroll;color:var(--ink);font-family:Outfit,sans-serif;font-weight:800;perspective:1000px;} body::-webkit-scrollbar{display:none;} .bgvideo{position:fixed;top:0;left:0;z-index:-3;width:100%;height:100%;object-fit:cover;filter:brightness(.25) saturate(1) contrast(1.1);} #gate{position:fixed;inset:0;z-index:99;display:grid;place-items:center;background:#000;cursor:pointer;transition:opacity .4s;padding:20px;}
 #gate.hide{opacity:0;pointer-events:none;} 
-.gatebox{text-align:center;animation:fadeIn 1s ease;}
+.gatebox{text-align:center;animation:fadeIn 1s ease;width:100%;max-width:400px;}
 @keyframes fadeIn{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
-.gate-pic{width:350px;height:350px;}
-.gate-pic img{width:100%;height:100%;object-fit:cover;transition:.4s;filter:drop-shadow(0 0 30px rgba(255,255,255,.3));}
-.gate-pic img:hover{transform:scale(1.05);filter:drop-shadow(0 0 40px rgba(255,255,255,.5));}
-.page-wrapper{position:relative;width:100%;display:flex;justify-content:center;} .wrap{width:min(700px,calc(100% - 40px));margin:20px auto 40px auto;display:flex;flex-direction:column;align-items:center;opacity:0;pointer-events:none;transition:opacity .5s ease;} .wrap.show{opacity:1;pointer-events:auto;} .tag{color:var(--dim);font-size:.68rem;letter-spacing:1.5px;text-align:center;font-weight:300;} .rule{width:60px;height:2px;margin:30px 0;background:var(--glow);} #treeArea{width:100%;margin-top:-20px;} .tier{display:flex;flex-direction:column;align-items:center;margin:40px 0;} .ttitle{color:#fff;font-size:.68rem;letter-spacing:5px;margin-bottom:20px;font-weight:500;} .roster{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;}
+.gate-pic{width:100%;aspect-ratio:1/1;max-width:350px;margin:0 auto;}
+.gate-pic img{width:100%;height:100%;object-fit:cover;transition:.4s;filter:drop-shadow(0 0 40px rgba(0,0,0,.8));}
+.page-wrapper{position:relative;width:100%;display:flex;justify-content:center;padding:0 15px;} 
+.wrap{width:100%;max-width:700px;margin:20px auto 40px auto;display:flex;flex-direction:column;align-items:center;opacity:0;pointer-events:none;transition:opacity .5s ease;} 
+.wrap.show{opacity:1;pointer-events:auto;} 
+.tag{color:var(--dim);font-size:.68rem;letter-spacing:1.5px;text-align:center;font-weight:300;} 
+.rule{width:60px;height:2px;margin:30px 0;background:var(--glow);} 
+#treeArea{width:100%;margin-top:-20px;} 
+.tier{display:flex;flex-direction:column;align-items:center;margin:40px 0;width:100%;} 
+.ttitle{color:#fff;font-size:.68rem;letter-spacing:5px;margin-bottom:20px;font-weight:500;} 
+.roster{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;width:100%;}
 .person{display:flex;flex-direction:column;align-items:center;gap:15px;background:transparent;border:none;padding:0;transition:transform .4s ease;transform-style:preserve-3d;}
 .person:hover{transform:translateY(-8px) rotateX(5deg) rotateY(-8deg);}
-.pface-wrapper{position:relative;width:190px;height:190px;}
-.pface{width:190px;height:190px;border-radius:50%;overflow:hidden;position:relative;border:2px solid rgba(255,255,255,.1);z-index:1;}
+.pface-wrapper{position:relative;width:190px;height:190px;max-width:80vw;}
+.pface{width:100%;height:100%;border-radius:50%;overflow:hidden;position:relative;border:none;z-index:1;}
 .pface img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
-.pface-deco{position:absolute;inset:-15px;width:220px;height:220px;pointer-events:none;z-index:2;}
-.pstatus-dot{position:absolute;bottom:10px;right:10px;width:26px;height:26px;background:#ff4d00;border:3px solid #000;border-radius:50%;z-index:3;}
-.pplacard{background:transparent;border:none;padding:0;text-align:center;margin-top:-5px;}
-.pname{font-size:3.2rem;font-weight:900;letter-spacing:-1px;line-height:1;}
-.phandle{font-size:.9rem;color:var(--dim);font-weight:400;margin-top:5px;}
-.aboutme{width:100%;padding:20px;border-radius:14px;background:transparent;text-align:center;transition:.3s;} .aboutme:hover{transform:translateY(-5px);} .aboutme-title{font-size:.75rem;letter-spacing:3px;color:var(--glow);margin-bottom:12px;font-weight:700;} .aboutme-text{font-size:.7rem;color:var(--dim);line-height:1.6;font-weight:300;} .player-new{width:100%;margin:60px 0;padding:25px;border-radius:18px;background:transparent;display:flex;gap:20px;align-items:center;transition:.3s;} .player-new:hover{transform:translateY(-3px);} .player-cover{width:80px;height:80px;border-radius:10px;overflow:hidden;} .player-cover img{width:100%;height:100%;object-fit:cover;} .player-main{flex:1;} .player-top{margin-bottom:12px;} .player-info .player-title{font-size:1rem;font-weight:700;} .player-info .player-artist{font-size:.75rem;color:var(--dim);font-weight:300;} .player-controls{display:flex;align-items:center;gap:25px;justify-content:center;} .player-btn{background:transparent;border:none;color:var(--ink);font-size:1.6rem;cursor:pointer;transition:.2s;} .player-btn:hover{color:var(--glow);} .play-pause{font-size:2rem;width:50px;height:50px;border-radius:50%;background:var(--ink);color:#000;display:grid;place-items:center;} .play-pause:hover{transform:scale(1.1);} .progress-wrap{width:100%;height:5px;background:rgba(255,255,255,.15);border-radius:3px;cursor:pointer;margin:12px 0;} .progress-bar{height:100%;width:0%;background:var(--glow);border-radius:3px;transition:width 0.1s linear;}
-.side-gif{position:absolute;top:120px;width:260px;height:260px;border-radius:14px;overflow:hidden;background:transparent;border:none;z-index:80;}
-.side-gif.left{left:calc(50% - 700px/2 - 260px - 25px);}
-.side-gif.right{right:calc(50% - 700px/2 - 260px - 25px);}
-.side-gif img{width:100%;height:100%;object-fit:cover;}
-.navdots{position:fixed;left:50%;bottom:30px;transform:translateX(-50%);z-index:90;display:flex;gap:16px;} .navdot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.2);cursor:pointer;transition:.3s;} .navdot.active{background:var(--glow);transform:scale(1.3);}
-/* MOBILE FIX - PARA MAGANDA SA CP */
-@media(max-width:1400px){ .side-gif{display:none;} }
+.pface-deco{position:absolute;inset:-10%;width:120%;height:120%;pointer-events:none;z-index:2;}
+.pstatus-dot{position:absolute;bottom:5%;right:5%;width:14%;height:14%;background:#ff4d00;border:3px solid #000;border-radius:50%;z-index:3;}
+.pplacard{background:transparent;border:none;padding:0;text-align:center;margin-top:-5px;width:100%;}
+.pname{font-size:clamp(2rem, 8vw, 3.2rem);font-weight:900;letter-spacing:-1px;line-height:1;word-break:break-word;}
+.phandle{font-size:clamp(.8rem, 3vw, .9rem);color:var(--dim);font-weight:400;margin-top:5px;}
+.aboutme{width:100%;padding:20px;border-radius:14px;background:transparent;text-align:center;transition:.3s;} 
+.aboutme:hover{transform:translateY(-5px);} 
+.aboutme-title{font-size:.75rem;letter-spacing:3px;color:var(--glow);margin-bottom:12px;font-weight:700;} 
+.aboutme-text{font-size:.7rem;color:var(--dim);line-height:1.6;font-weight:300;} 
+.player-new{width:100%;margin:60px 0;padding:25px;border-radius:18px;background:transparent;display:flex;gap:20px;align-items:center;transition:.3s;} 
+.player-new:hover{transform:translateY(-3px);} 
+.player-cover{width:80px;height:80px;border-radius:10px;overflow:hidden;flex-shrink:0;} 
+.player-cover img{width:100%;height:100%;object-fit:cover;} 
+.player-main{flex:1;min-width:0;} 
+.player-top{margin-bottom:12px;} 
+.player-info .player-title{font-size:1rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;} 
+.player-info .player-artist{font-size:.75rem;color:var(--dim);font-weight:300;} 
+.player-controls{display:flex;align-items:center;gap:25px;justify-content:center;} 
+.player-btn{background:transparent;border:none;color:var(--ink);font-size:1.6rem;cursor:pointer;transition:.2s;} 
+.player-btn:hover{color:var(--glow);} 
+.play-pause{font-size:2rem;width:50px;height:50px;border-radius:50%;background:var(--ink);color:#000;display:grid;place-items:center;} 
+.play-pause:hover{transform:scale(1.1);} 
+.progress-wrap{width:100%;height:5px;background:rgba(255,255,255,.15);border-radius:3px;cursor:pointer;margin:12px 0;} 
+.progress-bar{height:100%;width:0%;background:var(--glow);border-radius:3px;transition:width 0.1s linear;}
+.side-gif{display:none;} /* tinago ko na sa lahat para di sumikip */
+.navdots{position:fixed;left:50%;bottom:30px;transform:translateX(-50%);z-index:90;display:flex;gap:16px;padding:10px;} 
+.navdot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.2);cursor:pointer;transition:.3s;flex-shrink:0;} 
+.navdot.active{background:var(--glow);transform:scale(1.3);}
+
+/* MOBILE FIRST - DITO MAG AADJUST LAHAT */
 @media(max-width:768px){
-  .wrap{width:calc(100% - 30px);margin:10px auto;}
-  .gate-pic{width:280px;height:280px;}
+  .gate-pic{max-width:280px;}
   .pface-wrapper{width:160px;height:160px;}
-  .pface{width:160px;height:160px;}
-  .pface-deco{width:190px;height:190px;inset:-15px;}
-  .pname{font-size:2.4rem;}
-  .phandle{font-size:.8rem;}
-  .player-new{flex-direction:column;padding:20px;gap:15px;}
+  .player-new{flex-direction:column;padding:20px;gap:15px;text-align:center;}
   .player-cover{width:100px;height:100px;}
   .navdots{bottom:20px;gap:12px;}
 }
 @media(max-width:480px){
-  .pname{font-size:2rem;}
-  .gate-pic{width:240px;height:240px;}
+  .page-wrapper{padding:0 10px;}
+  .gate-pic{max-width:240px;}
   .pface-wrapper{width:140px;height:140px;}
-  .pface{width:140px;height:140px;}
-  .pface-deco{width:170px;height:170px;}
+  .pname{font-size:2rem;}
+  .wrap{margin:10px auto 30px auto;}
 }
-</style> </head> <body> <video class="bgvideo" autoplay loop muted playsinline> <source src="https://v1.pinimg.com/videos/iht/expMp4/76/10/60/7610600a692210231f850e3177411fef_720w.mp4" type="video/mp4"> </video> <div class="bgshade"></div> <div id="gate"> <div class="gatebox"> <div class="gate-pic"><img src="https://i.imgur.com/eyzEEe8.gif" alt="intro"></div> </div> </div> <div class="page-wrapper"> <div class="side-gif left"> <img src="https://i.imgur.com/ERCSijK.gif" alt="left gif"> </div> <main class="wrap"> <p class="tag">“exclusive.”</p> <div class="rule"></div> <section id="treeArea"> <div class="tier" id="exclusive"> <div class="ttitle">REVSHIT</div> <div class="roster"> <article class="person"> <div class="pface-wrapper"> <div class="pface"> <img src="https://i.imgur.com/M1ftfV8.jpeg"> <div class="pstatus-dot"></div> </div> <img class="pface-deco" src="https://cdn.discordapp.com/avatar-decoration-presets/a_bec26d0726a0f2eb7491a7cd40ac9c73.png?size=240"> </div> <div class="pplacard"> <div class="pname">ic¹⁷³⁸</div> <div class="phandle">@icey.1738</div> </div> </article> </div> </div> <div class="tier" id="about"> <div class="ttitle">ABOUT ME</div> <div class="aboutme"> <div class="aboutme-title">above all gods</div> <div class="aboutme-text"> 1738 <br> "exclusive"<br> revshit </div> </div> </div> </section> <div class="player-new" id="player"> <div class="player-cover"><img src="https://i.imgur.com/sbZWuSu.jpeg"></div> <div class="player-main"> <div class="player-top"> <div class="player-info"> <div class="player-title">My Melody</div> <div class="player-artist">My Melody</div> </div> </div> <div class="progress-wrap" id="progressWrap"><div class="progress-bar" id="progressBar"></div></div> <div class="player-controls"> <button class="player-btn play-pause" id="playBtn">▶</button> </div> </div> </div> </main> <div class="side-gif right"> <img src="https://i.imgur.com/wEp19a1.gif" alt="right gif"> </div> </div> <div class="navdots"> <div class="navdot active" data-target="exclusive"></div> <div class="navdot" data-target="about"></div> <div class="navdot" data-target="player"></div> </div> <script> var audio = new Audio(); audio.src = "https://raw.githubusercontent.com/rafstunnerz/grimez/main/My%20Melody%20Birthday%20Song%20(online-audio-converter.com).mp3"; audio.volume = 0.6; audio.loop = true; var isPlaying = false;
+</style> </head> <body> <video class="bgvideo" autoplay loop muted playsinline> <source src="https://v1.pinimg.com/videos/iht/expMp4/76/10/60/7610600a692210231f850e3177411fef_720w.mp4" type="video/mp4"> </video> <div id="gate"> <div class="gatebox"> <div class="gate-pic"><img src="https://i.imgur.com/eyzEEe8.gif" alt="intro"></div> </div> </div> <div class="page-wrapper"> <main class="wrap"> <p class="tag">“exclusive.”</p> <div class="rule"></div> <section id="treeArea"> <div class="tier" id="exclusive"> <div class="ttitle">REVSHIT</div> <div class="roster"> <article class="person"> <div class="pface-wrapper"> <div class="pface"> <img src="https://i.imgur.com/M1ftfV8.jpeg"> <div class="pstatus-dot"></div> </div> <img class="pface-deco" src="https://cdn.discordapp.com/avatar-decoration-presets/a_bec26d0726a0f2eb7491a7cd40ac9c73.png?size=240"> </div> <div class="pplacard"> <div class="pname">ic¹⁷³⁸</div> <div class="phandle">@icey.1738</div> </div> </article> </div> </div> <div class="tier" id="about"> <div class="ttitle">ABOUT ME</div> <div class="aboutme"> <div class="aboutme-title">above all gods</div> <div class="aboutme-text"> 1738 <br> "exclusive"<br> revshit </div> </div> </div> </section> <div class="player-new" id="player"> <div class="player-cover"><img src="https://i.imgur.com/sbZWuSu.jpeg"></div> <div class="player-main"> <div class="player-top"> <div class="player-info"> <div class="player-title">My Melody</div> <div class="player-artist">My Melody</div> </div> </div> <div class="progress-wrap" id="progressWrap"><div class="progress-bar" id="progressBar"></div></div> <div class="player-controls"> <button class="player-btn play-pause" id="playBtn">▶</button> </div> </div> </div> </main> </div> <div class="navdots"> <div class="navdot active" data-target="exclusive"></div> <div class="navdot" data-target="about"></div> <div class="navdot" data-target="player"></div> </div> <script> var audio = new Audio(); audio.src = "https://raw.githubusercontent.com/rafstunnerz/grimez/main/My%20Melody%20Birthday%20Song%20(online-audio-converter.com).mp3"; audio.volume = 0.6; audio.loop = true; var isPlaying = false;
 
 document.getElementById("gate").addEventListener("click",function(){
   this.classList.add("hide");
